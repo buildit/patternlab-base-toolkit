@@ -3,11 +3,13 @@
  * EDITION-NODE-GULP
  * The gulp wrapper around patternlab-node core, providing tasks to interact with the core library and move supporting frontend assets.
 ******************************************************/
-var gulp = require('gulp'),
-  path = require('path'),
-  browserSync = require('browser-sync').create(),
-  argv = require('minimist')(process.argv.slice(2)),
-  chalk = require('chalk');
+const gulp = require('gulp');
+const path = require('path');
+const browserSync = require('browser-sync').create();
+const sass = require('gulp-sass');
+const eyeglass = require('eyeglass');
+const argv = require('minimist')(process.argv.slice(2));
+const chalk = require('chalk');
 
 /**
  * Normalize all paths to be plain, paths with no leading './',
@@ -28,6 +30,16 @@ function normalizePath() {
     )
     .replace(/\\/g, "/");
 }
+
+gulp.task('pl-sass', function () {
+  const sassOptions = {
+  //   includePaths: [paths().source.sass].concat(require('node-neat').includePaths)
+  };
+
+  return gulp.src(path.resolve(paths().source.sass, '**/*.scss'))
+    .pipe(sass(eyeglass(sassOptions)).on('error', sass.logError))
+    .pipe(gulp.dest(path.resolve(paths().source.css)))
+})
 
 /******************************************************
  * COPY TASKS - stream assets from source to destination
@@ -115,14 +127,19 @@ function build(done) {
 }
 
 gulp.task('pl-assets', gulp.series(
-  'pl-copy:js',
-  'pl-copy:img',
-  'pl-copy:favicon',
-  'pl-copy:font',
-  'pl-copy:css',
-  'pl-copy:styleguide',
-  'pl-copy:styleguide-css'
-));
+    'pl-copy:js',
+    'pl-copy:img',
+    'pl-copy:favicon',
+    'pl-copy:font',
+    'pl-sass',
+    'pl-copy:css',
+    'pl-copy:styleguide',
+    'pl-copy:styleguide-css'
+  ),
+  function (done) {
+    done();
+  }
+);
 
 gulp.task('patternlab:version', function (done) {
   patternlab.version();
@@ -189,6 +206,12 @@ function reloadCSS(done) {
 
 function watch() {
   const watchers = [
+    {
+      name: 'SASS',
+      paths: [normalizePath(paths().source.sass, '**', '*.scss')],
+      config: { awaitWriteFinish: true },
+      tasks: gulp.series('pl-sass')
+    },
     {
       name: 'CSS',
       paths: [normalizePath(paths().source.css, '**', '*.css')],

@@ -3,13 +3,19 @@
   "description": "The gulp wrapper around patternlab-node core, providing tasks to interact with the core library and move supporting frontend assets.",
   "version": "1.4.0",
   "dependencies": {
+    "bourbon-neat": "^2.0.0",
     "browser-sync": "^2.0.0",
     "chalk": "^1.1.3",
+    "eyeglass": "^1.2.1",
     "gulp": "gulpjs/gulp#4.0",
+    "gulp-sass": "^3.1.0",
+    "gulp-stylelint": "^3.9.0",
     "minimist": "^1.2.0",
+    "modularscale-sass": "^3.0.2",
     "patternlab-node": "^2.0.0",
     "styleguidekit-assets-default": "^3.0.0",
-    "styleguidekit-mustache-default": "^3.0.0"
+    "styleguidekit-mustache-default": "^3.0.0",
+    "stylelint-config-standard": "^16.0.0"
   },
   "keywords": [
     "Pattern Lab",

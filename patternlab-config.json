@@ -11,7 +11,8 @@
       "js" : "./source/js",
       "images" : "./source/images",
       "fonts" : "./source/fonts",
-      "css" : "./source/css/"
+      "css" : "./source/css/",
+      "sass": "./source/sass/"
     },
     "public" : {
       "root" : "./public/",
@@ -29,7 +30,7 @@
   ],
   "defaultPattern": "all",
   "defaultShowPatternInfo": false,
-  "cleanPublic" : true,
+  "cleanPublic" : false,
   "patternExtension": "mustache",
   "ignored-extensions" : ["scss", "DS_Store", "less"],
   "ignored-directories" : ["scss"],
