@@ -1,103 +1,51 @@
-# Pattern Lab Node - Gulp Edition
+# PatternLab Base Toolkit
 
-The Gulp wrapper around [Pattern Lab Node Core](https://github.com/pattern-lab/patternlab-node) providing tasks to interact with the core library and move supporting frontend assets.
+## Overview
 
-## Packaged Components
+This is merely just an attempt in a modular and reusable Design System using PatternLab.
 
-The Gulp Edition comes with the following components:
+This project is based on [PatternLab Node Edition Gulp](https://github.com/pattern-lab/edition-node-gulp).
 
-* `patternlab-node`: [GitHub](https://github.com/pattern-lab/patternlab-node), [npm](https://www.npmjs.com/package/patternlab-node)
-* `patternengine-node-mustache`: [GitHub](https://github.com/pattern-lab/patternengine-node-mustache), [npm](https://www.npmjs.com/package/patternengine-node-mustache)
-* `pattern-lab/styleguidekit-assets-default`: [GitHub](https://github.com/pattern-lab/styleguidekit-assets-default)
-* `pattern-lab/styleguidekit-mustache-default`: [GitHub](https://github.com/pattern-lab/styleguidekit-mustache-default)
+Check out the [Technical Bits](#technical-bits) if you want to learn more about it.
 
-## Prerequisites
+## Design System
 
-The Pattern Lab Node - Gulp Edition uses [Node](https://nodejs.org) for core processing, [npm](https://www.npmjs.com/) to manage project dependencies, and [gulp.js](http://gulpjs.com/) to run tasks and interface with the core library. Node version 4 or higher suffices. You can follow the directions for [installing Node](https://nodejs.org/en/download/) on the Node website if you haven't done so already. Installation of Node will include npm.
+Based on different ideas and methodologies, I've tried to aim for something that is as comprehensive and clear as possible, which means that the following sections are currently covered (although most of the them are mostly a reference and need to be filled in appropriately):
 
-It's also highly recommended that you [install gulp](hhttps://github.com/gulpjs/gulp/blob/4.0/docs/getting-started.md) globally.
+1. **Principles**: this can be summarised as the most important part of the Design System, it should cover areas like _personality_, _writing style_, _colours_, _illustrations_, _typography_, with simple and direct information on the principles behind each of them.
+2. **Core**: this section includes more technical aspects, also considered the _foundation_ of the whole system, this includes areas like _illustrations_, _iconography_, _colours_ and their usage, _typography_. It can be also accompained with downloadable resources to be used in various media (emails, social media, ...).
+3. **Components**: this section is what comes out of the above two points: it's essentially a pattern library that should feature elements that have been created.
+4. **Applications**: this section covers practical examples of applications of the various components, possibly used as a way to document and test them.
 
-> Note: The Gulp Edition of Pattern Lab uses Gulp 4, which may require a new global install of the Gulp command line interface. Follow the [gulp upgrade instructions](https://github.com/pattern-lab/edition-node-gulp/wiki/Updating-to-Gulp-4) if you already have gulp installed and need to upgrade. Gulp 4 is in alpha, but brings many benefits to the table and is relatively stable. You can alternatively [run with local gulp instead of global gulp](https://github.com/pattern-lab/patternlab-node/wiki/Running-with-Local-Gulp-Instead-of-Global-Gulp), but commands are a bit more verbose. The rest of this documentation assumes a global install.
+The current implementation provides only a scheleton for this, moreover the various bits are going to be provided as separate dependencies that can be extended and improved or replaced as needed.
 
-## Installing
+## Technical bits
 
-There are two methods for downloading and installing the Gulp Edition:
+There are some major differences from the original project, namely:
 
-* [Download a pre-built package](#download-a-pre-built-package)
-* [Use npm](#use-npm)
+- SASS compilation
+- Directory structure
+- Improved code standards to be used throughout the project
 
-### Download a pre-built package
+### SASS compilation
 
-The fastest way to get started with the Gulp Edition is to [download the pre-built version](https://github.com/pattern-lab/edition-node-gulp/releases) from the [releases page](https://github.com/pattern-lab/edition-node-gulp/releases). The pre-built project comes with the [Base Starterkit for Mustache](https://github.com/pattern-lab/starterkit-mustache-base) installed by default.
+The `gulpfile.js` will automatically compile, inject, and reload the browser upon changes to any of the `*.scss` files available in the directory `/source/sass/`.
 
-**Please note:** Pattern Lab Node uses [npm](https://www.npmjs.com/) to manage project dependencies. To upgrade the Gulp Edition or to install plug-ins you'll need to be familiar with npm.
+It comes with the following dependencies:
+- [Eyeglass](http://eyeglass.rocks/) for enhanced npm module loading within the CSS.
+- [Normalize-scss](https://github.com/JohnAlbin/normalize-scss) as a SCSS module for Normalize.css .
+- [Bourbon-Neat](http://neat.bourbon.io/) for the grid system.
+- [Modularscale-sass](https://github.com/modularscale/modularscale-sass) for typography following [Modular Scale](http://modularscale.com) principles.
+- [Typi](https://github.com/zellwk/typi) for responsive typography and vertical rhythm.
 
-### Use npm
+**NOTE** apparently there's a bug in Modularscale-sass that breaks compatibility with the latest version of Eyeglass, a [bug report has been opened](https://github.com/modularscale/modularscale-sass/issues/141), in the meantime you would need to change the `eyeglass` configuration object in the `package.json` found in `/node_modules/modularscale-sass/`:
 
-`npm` is a dependency management and package system which can pull in all of the Gulp Edition's dependencies for you. To accomplish this:
+    "eyeglass": {
+      "exports": "eyeglass-exports.js",
+      "name": "modularscale",
+      "needs": "^1.2.1"
+    }
 
-* download or `git clone` this repository to an install location.
+# TODO
 
-* run the following
-
-    ```
-    cd install/location
-    npm install
-    ```
-
-Running `npm install` from a directory containing a `package.json` file will download all dependencies defined within.
-
-#### Install the Gulp Edition of Pattern Lab Node as a Dependency
-
-Most people want to run Pattern Lab Node standalone and not as a dependency. If you wish to install as a dependency you can do the following:
-
-Use npm's [`install` command](https://docs.npmjs.com/cli/install) with an argument to install the Gulp Edition into a location of your choosing. In Terminal type:
-
-    cd install/location/
-    npm install edition-node-gulp
-
-This will install the Gulp Edition into a directory called `node_modules` in `install/location/`.
-
-## Getting Started
-
-The Pattern Lab Node - Gulp Edition ships with a [base experience](https://github.com/pattern-lab/starterkit-mustache-base) which serves as clean place to start from scratch with Pattern Lab. But if you want to get rolling with a starterkit of your own, or use the [demo starterkit](https://github.com/pattern-lab/starterkit-mustache-demo) like the one on [demo.patternlab.io](http://demo.patternlab.io), you can do so automatically at time of `npm install` by adding your starterkit to the `package.json` file.
-
-You can also [work with starterkits using the command line](https://github.com/pattern-lab/patternlab-node/wiki/Importing-Starterkits).
-
-## Updating Pattern Lab
-
-To update Pattern Lab please refer to each component's GitHub repository, and the [master instructions for core](https://github.com/pattern-lab/patternlab-node/wiki/Upgrading). The components are listed at the top of the README.
-
-## Helpful Commands
-
-These are some helpful commands you can use on the command line for working with Pattern Lab.
-
-> Reminder: These commands assume a global installation of gulp 4.X, instead of a local installation. Depending on your preference, you may need to [upgrade your global version of gulp](https://github.com/pattern-lab/edition-node-gulp/wiki/Updating-to-Gulp-4) or [run with local gulp](https://github.com/pattern-lab/patternlab-node/wiki/Running-with-Local-Gulp-Instead-of-Global-Gulp).
-
-### List all of the available commands
-
-To list all available commands type:
-
-    gulp patternlab:help
-
-### Generate Pattern Lab
-
-To generate the front-end for Pattern Lab type:
-
-    gulp patternlab:build
-
-### Watch for changes and re-generate Pattern Lab
-
-To watch for changes, re-generate the front-end, and server it via a BrowserSync server,  type:
-
-    gulp patternlab:serve
-
-BrowserSync should open [http://localhost:3000](http://localhost:3000) in your browser.
-
-### Install a StarterKit
-
-To install a specific StarterKit from GitHub type:
-
-    npm install [starterkit-vendor/starterkit-name]
-
-    gulp patternlab:loadstarterkit --kit=[starterkit-name]
+- Add support for autoprefixer when compiling SCSS files.
