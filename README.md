@@ -32,6 +32,7 @@ There are some major differences from the original project, namely:
 The `gulpfile.js` will automatically compile, inject, and reload the browser upon changes to any of the `*.scss` files available in the directory `/source/sass/`.
 
 It comes with the following dependencies:
+
 - [Eyeglass](http://eyeglass.rocks/) for enhanced npm module loading within the CSS.
 - [Normalize-scss](https://github.com/JohnAlbin/normalize-scss) as a SCSS module for Normalize.css .
 - [Bourbon-Neat](http://neat.bourbon.io/) for the grid system.
