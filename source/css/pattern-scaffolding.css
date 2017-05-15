@@ -28,7 +28,7 @@
   margin: 0 !important;
 }
 
-.sg-colors li {
+.sg-colors > li {
   flex: auto;
   padding: .3em;
   margin: 0 .5em .5em 0;
@@ -40,9 +40,65 @@
 
 .sg-swatch {
   display: block;
-  height: 4em;
+  height: 6em;
   margin-bottom: .3em;
   border-radius: 5px;
+}
+
+.sg-swatch-check {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  height: 6em;
+}
+
+.sg-swatch-check__group {
+  display: grid;
+  justify-self: center;
+  grid-template-columns: 50% 50%;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.sg-swatch-check__item {
+  align-self: end;
+  text-align: center;
+}
+
+.sg-swatch-check__item:nth-child(1) {
+  margin-right: 5px;
+}
+
+.sg-swatch-check__item::before {
+  display: block;
+  content: "A";
+  height: 1em;
+}
+
+.sg-swatch-check__item--light::before {
+  color: #FFFFFF;
+}
+
+.sg-swatch-check__item--dark::before {
+  color: #000000;
+}
+
+.sg-swatch-check__item--small::before {
+  font-size: 12px;
+}
+
+.sg-swatch-check__item--big::before {
+  font-size: 18px;
+}
+
+.sg-swatch-check__item-label {
+  color: #FFFFFF;
+  background-color: #000000;
+  border-radius: 5px;
+  font-size: .7em;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 2px 4px;
 }
 
 .sg-label {
@@ -60,19 +116,24 @@
 .sg-datalist > * {
   margin: 0;
   padding: 0;
-}
-
-.sg-datalist > *:nth-child(2n) {
-  margin-bottom: .5em;
+  align-self: center;
 }
 
 .sg-datalist > dt {
   text-align: right;
   padding-right: .5em;
-  font-size: .9em;
 }
 
 .sg-datalist > dd {
   font-family: monospace;
   margin-left: 0;
+}
+
+.sg-datalist__label {
+  text-transform: uppercase;
+  padding: 2px 4px;
+  font-size: .7em;
+  color: #FFFFFF;
+  background-color: #000000;
+  border-radius: 5px;
 }
