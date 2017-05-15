@@ -34,10 +34,10 @@ a {
   color: $color-blue;
 
   &:hover {
-    color: darken($color-blue, 10);
+    color: $color-blue-dark;
   }
 
   &:visited {
-    color: lighten($color-blue, 10);
+    color: $color-blue-light;
   }
 }

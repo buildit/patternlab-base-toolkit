@@ -1,9 +1,22 @@
+// used for colour adjustments
+$amount: 10;
+
 // brand colours
 $color-black: #1C1F22;
 $color-lime: #BEDB39;
 $color-orange: #FF9800;
 $color-red: #E84925;
 $color-blue: #4682B4;
+
+// shades of brand colours
+$color-lime-dark: darken($color-lime, $amount);
+$color-lime-light: lighten($color-lime, $amount);
+$color-orange-dark: darken($color-orange, $amount);
+$color-orange-light: lighten($color-orange, $amount);
+$color-red-dark: darken($color-red, $amount);
+$color-red-light: lighten($color-red, $amount);
+$color-blue-dark: darken($color-blue, $amount);
+$color-blue-light: lighten($color-blue, $amount);
 
 // shades of grey
 $color-white: #FFFFFF;
@@ -15,3 +28,11 @@ $color-grey-dark: #333333;
 $color-error: #D9534F;
 $color-notice: #00BFFF;
 $color-success: #5CB85C;
+
+// shades of other colours
+$color-error-dark: darken($color-error, $amount);
+$color-error-light: lighten($color-error, $amount);
+$color-notice-dark: darken($color-notice, $amount);
+$color-notice-light: lighten($color-notice, $amount);
+$color-success-dark: darken($color-success, $amount);
+$color-success-light: lighten($color-success, $amount);
