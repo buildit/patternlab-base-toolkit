@@ -7,11 +7,13 @@ body {
 p {
   margin-top: vr(1);
   margin-bottom: vr(1);
+  max-width: $text-max-width;
 }
 
 blockquote {
   font-size: $font-7-size;
   font-style: italic;
+  max-width: $text-max-width;
 }
 
 ul,
