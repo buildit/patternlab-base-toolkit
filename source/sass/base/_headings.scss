@@ -1,0 +1,47 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.heading,
+.title,
+.subtitle {
+  @include font('heading', 'bold');
+}
+
+h1,
+.heading {
+  @include typi('heading');
+
+  margin-top: vr(1);
+  margin-bottom: vr(2);
+}
+
+h2,
+.title {
+  @include typi('title');
+
+  margin-top: vr(1);
+  margin-bottom: vr(1);
+}
+
+h3,
+.subtitle {
+  @include typi('subtitle');
+
+  margin-top: vr(1);
+  margin-bottom: vr(2);
+}
+
+h4 {
+  font-size: $font-4-size;
+}
+
+h5 {
+  font-size: $font-5-size;
+}
+
+h6 {
+  font-size: $font-6-size;
+}

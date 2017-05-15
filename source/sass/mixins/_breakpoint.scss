@@ -1,0 +1,8 @@
+/**
+ * Returns the breakpoint given the size for it.
+ *
+ * @param {string} $size - the size of the breakpoint required (e.g. "small" or "large")
+ */
+@function breakpoint($size) {
+  @return map-get($breakpoints, $size);
+}

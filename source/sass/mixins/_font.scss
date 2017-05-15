@@ -1,0 +1,10 @@
+/**
+ * Fills in the right font family and font weight
+ *
+ * @param {string} $type - either one of "brand", "heading", "body" or "monospace"
+ * @param {string} $normal - the font-weight desired, can be "normal" or "bold", defaults to "normal"
+ */
+@mixin font($type, $weight: 'normal') {
+  font-family: zip(map-get(map-get($faces, $type), 'font-family'));
+  font-weight: map-get($faces, $weight);
+}

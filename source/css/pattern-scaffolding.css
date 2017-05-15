@@ -116,6 +116,9 @@
 .sg-datalist > * {
   margin: 0;
   padding: 0;
+}
+
+.sg-datalist--code > * {
   align-self: center;
 }
 
@@ -124,7 +127,7 @@
   padding-right: .5em;
 }
 
-.sg-datalist > dd {
+.sg-datalist--code > dd {
   font-family: monospace;
   margin-left: 0;
 }

@@ -1,0 +1,29 @@
+@include typi-init;
+
+body {
+  @include font('body');
+}
+
+p {
+  margin-top: vr(1);
+  margin-bottom: vr(1);
+}
+
+blockquote {
+  font-size: $font-7-size;
+  font-style: italic;
+}
+
+ul,
+ol {
+  margin-top: vr(1);
+  margin-bottom: vr(2);
+
+  > li {
+    margin-bottom: vr(.5);
+  }
+}
+
+small {
+  font-size: $font-9-size;
+}
