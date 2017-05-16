@@ -38,11 +38,35 @@
   border-radius: 8px;
 }
 
+.sg-shades {
+  list-style: none;
+  border: 1px solid #DDDDDD;
+  border-radius: 8px;
+  padding: 0;
+}
+
+.sg-shades > li {
+  display: grid;
+  grid-template-columns: 4em 1fr;
+  margin: 0;
+  padding: .5em;
+}
+
+.sg-shades > li + li {
+  border-top: 1px solid #DDDDDD;
+}
+
 .sg-swatch {
   display: block;
   height: 6em;
   margin-bottom: .3em;
   border-radius: 5px;
+}
+
+.sg-shades .sg-swatch {
+  width: 4em;
+  height: 2em;
+  margin-bottom: 0;
 }
 
 .sg-swatch-check {
@@ -120,6 +144,11 @@
 
 .sg-datalist--code > * {
   align-self: center;
+}
+
+.sg-datalist--flat {
+  margin: 0;
+  grid-template-columns: 4em 1fr 4em 1fr 4em 1fr 4em 1fr;
 }
 
 .sg-datalist > dt {

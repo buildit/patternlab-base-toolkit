@@ -1,0 +1,112 @@
+{
+  "colors": [
+    {
+      "color": {
+        "name": "Lime Light",
+        "varname": "$color-lime-light",
+        "hex": "CCE364",
+        "rgb": "204,227,100",
+        "cmyk": "10,0,56,11"
+      }
+    },
+    {
+      "color": {
+        "name": "Lime",
+        "varname": "$color-lime",
+        "hex": "BEDB39",
+        "rgb": "190,219,57",
+        "cmyk": "13,0,74,14"
+      }
+    },
+    {
+      "color": {
+        "name": "Lime Dark",
+        "varname": "$color-lime-dark",
+        "hex": "A3BE23",
+        "rgb": "163,190,35",
+        "cmyk": "14,0,82,25"
+      }
+    },
+    {
+      "color": {
+        "name": "Orange Light",
+        "varname": "$color-orange-light",
+        "hex": "FFAD33",
+        "rgb": "255,173,51",
+        "cmyk": "0,32,80,0"
+      }
+    },
+    {
+      "color": {
+        "name": "Orange",
+        "varname": "$color-orange",
+        "hex": "FF9800",
+        "rgb": "255,152,0",
+        "cmyk": "0,40,100,0"
+      }
+    },
+    {
+      "color": {
+        "name": "Orange Dark",
+        "varname": "$color-orange-dark",
+        "hex": "CC7A00",
+        "rgb": "204,122,0",
+        "cmyk": "0,40,100,20"
+      }
+    },
+    {
+      "color": {
+        "name": "Red Light",
+        "varname": "$color-red-light",
+        "hex": "ED7053",
+        "rgb": "237,112,83",
+        "cmyk": "0,53,65,7"
+      }
+    },
+    {
+      "color": {
+        "name": "Red",
+        "varname": "$color-red",
+        "hex": "E84925",
+        "rgb": "232,73,37",
+        "cmyk": "0,69,84,9"
+      }
+    },
+    {
+      "color": {
+        "name": "Red Dark",
+        "varname": "$color-red-dark",
+        "hex": "C53515",
+        "rgb": "197,53,21",
+        "cmyk": "0,73,89,23"
+      }
+    },
+    {
+      "color": {
+        "name": "Blue Light",
+        "varname": "$color-blue-light",
+        "hex": "699BC4",
+        "rgb": "105,155,196",
+        "cmyk": "46,21,0,23"
+      }
+    },
+    {
+      "color": {
+        "name": "Blue",
+        "varname": "$color-blue",
+        "hex": "4682B4",
+        "rgb": "70,130,180",
+        "cmyk": "61,28,0,29"
+      }
+    },
+    {
+      "color": {
+        "name": "Blue Dark",
+        "varname": "$color-blue-dark",
+        "hex": "38678F",
+        "rgb": "56,103,143",
+        "cmyk": "61,28,0,44"
+      }
+    }
+  ]
+}
