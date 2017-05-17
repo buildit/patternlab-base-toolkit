@@ -1,7 +1,7 @@
 {
-  "name": "edition-node-gulp",
-  "description": "The gulp wrapper around patternlab-node core, providing tasks to interact with the core library and move supporting frontend assets.",
-  "version": "1.4.0",
+  "name": "@buildit/patternlab-base-toolkit",
+  "description": "A gulp based node edition of PatternLab. It provides the core of the library with some enhancements.",
+  "version": "1.0.0",
   "dependencies": {
     "bourbon-neat": "^2.0.0",
     "browser-sync": "^2.0.0",
@@ -28,10 +28,13 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git://github.com/pattern-lab/edition-node-gulp.git"
+    "url": "git@bitbucket.org:digitalrigbitbucketteam/patternlab-base-toolkit.git"
   },
   "bugs": "https://github.com/pattern-lab/edition-node-gulp/issues",
   "author": "Brian Muenzenmeyer",
+  "contributors": [
+    "Matteo Pescarin <matteo.pescarin@wipro.com>"
+  ],
   "scripts": {
     "start": "gulp patternlab:serve",
     "postinstall": "node scripts/postinstall.js",
