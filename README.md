@@ -34,18 +34,6 @@ The `gulpfile.js` will automatically compile, inject, and reload the browser upo
 It comes with the following dependencies:
 
 - [Eyeglass](http://eyeglass.rocks/) for enhanced npm module loading within the CSS.
-- [Normalize-scss](https://github.com/JohnAlbin/normalize-scss) as a SCSS module for Normalize.css .
-- [Bourbon-Neat](http://neat.bourbon.io/) for the grid system.
-- [Modularscale-sass](https://github.com/modularscale/modularscale-sass) for typography following [Modular Scale](http://modularscale.com) principles.
-- [Typi](https://github.com/zellwk/typi) for responsive typography and vertical rhythm.
-
-**NOTE** apparently there's a bug in Modularscale-sass that breaks compatibility with the latest version of Eyeglass, a [bug report has been opened](https://github.com/modularscale/modularscale-sass/issues/141), in the meantime you would need to change the `eyeglass` configuration object in the `package.json` found in `/node_modules/modularscale-sass/`:
-
-    "eyeglass": {
-      "exports": "eyeglass-exports.js",
-      "name": "modularscale",
-      "needs": "^1.2.1"
-    }
 
 # TODO
 
