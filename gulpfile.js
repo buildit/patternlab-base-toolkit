@@ -10,6 +10,7 @@ const sass = require('gulp-sass');
 const eyeglass = require('eyeglass');
 const argv = require('minimist')(process.argv.slice(2));
 const chalk = require('chalk');
+const concat = require('gulp-concat');
 
 /**
  * Normalize all paths to be plain, paths with no leading './',
@@ -68,9 +69,17 @@ gulp.task('pl-copy:font', function () {
     .pipe(gulp.dest(normalizePath(paths().public.fonts)));
 });
 
-// CSS Copy
-gulp.task('pl-copy:css', function () {
-  return gulp.src(normalizePath(paths().source.css) + '/*.css')
+// CSS Copy base style
+gulp.task('pl-copy:css:style', function () {
+  return gulp.src(normalizePath(paths().source.css) + '/style.css')
+    .pipe(gulp.dest(normalizePath(paths().public.css)))
+    .pipe(browserSync.stream());
+});
+
+// CSS Concat and copy pattern-scaffolding
+gulp.task('pl-copy:css:scaffolding', function () {
+  return gulp.src(normalizePath(paths().source.css) + '/*pattern-scaffolding*.css')
+    .pipe(concat('pattern-scaffolding.css'))
     .pipe(gulp.dest(normalizePath(paths().public.css)))
     .pipe(browserSync.stream());
 });
@@ -132,7 +141,8 @@ gulp.task('pl-assets', gulp.series(
     'pl-copy:favicon',
     'pl-copy:font',
     'pl-sass',
-    'pl-copy:css',
+    'pl-copy:css:style',
+    'pl-copy:css:scaffolding',
     'pl-copy:styleguide',
     'pl-copy:styleguide-css'
   ),
@@ -216,7 +226,7 @@ function watch() {
       name: 'CSS',
       paths: [normalizePath(paths().source.css, '**', '*.css')],
       config: { awaitWriteFinish: true },
-      tasks: gulp.series('pl-copy:css', reloadCSS)
+      tasks: gulp.series(['pl-copy:css:style', 'pl-copy:css:scaffolding'], reloadCSS)
     },
     {
       name: 'Styleguide Files',
