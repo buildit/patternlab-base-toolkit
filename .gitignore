@@ -6,4 +6,9 @@ patternlab.json
 Thumbs.db
 .idea/
 public
+
+# ignore the generated CSS
 source/css/style.css
+# ignore the imported scaffolding files
+source/css/*pattern-scaffolding*
+
