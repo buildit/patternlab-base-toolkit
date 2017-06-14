@@ -69,6 +69,12 @@ gulp.task('pl-copy:font', function () {
     .pipe(gulp.dest(normalizePath(paths().public.fonts)));
 });
 
+// Static assets copy
+gulp.task('pl-copy:assets', function () {
+  return gulp.src('*', {cwd: normalizePath(paths().source.assets)})
+    .pipe(gulp.dest(normalizePath(paths().public.assets)));
+});
+
 // CSS Copy base style
 gulp.task('pl-copy:css:style', function () {
   return gulp.src(normalizePath(paths().source.css) + '/style.css')
@@ -136,6 +142,7 @@ function build(done) {
 }
 
 gulp.task('pl-assets', gulp.series(
+    'pl-copy:assets',
     'pl-copy:js',
     'pl-copy:img',
     'pl-copy:favicon',
