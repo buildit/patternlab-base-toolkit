@@ -5,6 +5,7 @@
   "dependencies": {
     "@buildit/starterkit-gravity-base": "git@bitbucket.org:digitalrigbitbucketteam/starterkit-gravity-base.git",
     "@buildit/starterkit-gravity-rules": "git@bitbucket.org:digitalrigbitbucketteam/starterkit-gravity-rules.git",
+    "@buildit/gravy": "git@bitbucket.org:digitalrigbitbucketteam/gravy.git",
     "browser-sync": "^2.0.0",
     "chalk": "^1.1.3",
     "eyeglass": "^1.2.1",
