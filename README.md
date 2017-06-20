@@ -12,8 +12,8 @@ Check out the [Technical Bits](#technical-bits) if you want to learn more about 
 
 Based on different ideas and methodologies, I've tried to aim for something that is as comprehensive and clear as possible, which means that the following sections are currently covered (although most of the them are mostly a reference and need to be filled in appropriately):
 
-1. **Rules**: this can be summarised as the most important part of the Design System, it should cover areas like _personality_, _writing style_, _colours_, _illustrations_, _typography_, with simple and direct information on the principles behind each of them.
-2. **Base**: this section includes more technical aspects, also considered the _foundation_ of the whole system, this includes areas like _illustrations_, _iconography_, _colours_ and their usage, _typography_. It can be also accompained with downloadable resources to be used in various media (emails, social media, ...).
+1. **Rules**: (provided by [`starterkit-global-rules`](https://bitbucket.org/digitalrigbitbucketteam/starterkit-global-rules)) this can be summarised as the most important part of the Design System, it should cover areas like _personality_, _writing style_, _colours_, _illustrations_, _typography_, with simple and direct information on the principles behind each of them.
+2. **Building Blocks**: (provided by [`starterkit-building-blocks`](https://bitbucket.org/digitalrigbitbucketteam/starterkit-building-blocks)`) this section includes more technical aspects, also considered the _foundation_ of the whole system, this includes areas like _illustrations_, _iconography_, _colours_ and their usage, _typography_. It can be also accompained with downloadable resources to be used in various media (emails, social media, ...).
 3. **Patterns**: this section is what comes out of the above two points: it's essentially a pattern library that should feature elements that have been created.
 4. **Applications**: this section covers practical examples of applications of the various components, possibly used as a way to document and test them.
 
@@ -32,8 +32,8 @@ Install all the dependencies:
 
 Load the starterkits:
 
-    $ gulp patternlab:loadstarterkit --kit=@buildit/starterkit-gravity-rules
-    $ gulp patternlab:loadstarterkit --kit=@buildit/starterkit-gravity-base
+    $ gulp patternlab:loadstarterkit --kit=@buildit/starterkit-global-rules
+    $ gulp patternlab:loadstarterkit --kit=@buildit/starterkit-building-blocks
 
 Run the project:
 
@@ -56,7 +56,9 @@ The `gulpfile.js` will automatically compile, inject, and reload the browser upo
 It comes with the following dependencies:
 
 - [Eyeglass](http://eyeglass.rocks/) for enhanced npm module loading within the CSS.
+- [Gravy](https://bitbucket.org/digitalrigbitbucketteam/gravy) very small SASS lib on steroids that handles typography and few other bits.
 
 # TODO
 
 - Add support for autoprefixer when compiling SCSS files.
+- Add support for automatic SASS linting via stylelint.
