@@ -3,7 +3,7 @@
   "description": "A gulp based node edition of PatternLab. It provides the core of the library with some enhancements.",
   "version": "1.1.0",
   "dependencies": {
-    "@buildit/gravy": "^1.0.2",
+    "@buildit/gravy": "^1.2.1",
     "@buildit/starterkit-gravity-base": "git@bitbucket.org:digitalrigbitbucketteam/starterkit-building-blocks.git",
     "@buildit/starterkit-gravity-rules": "git@bitbucket.org:digitalrigbitbucketteam/starterkit-global-rules.git",
     "browser-sync": "^2.0.0",
