@@ -35,7 +35,7 @@ function normalizePath() {
 
 gulp.task('pl-sass', function () {
   const sassOptions = {
-  //   includePaths: [paths().source.sass].concat(require('node-neat').includePaths)
+    includePaths: [paths().source.sass].concat(['./node_modules/normalize-scss/sass/'])
   };
 
   return gulp.src(path.resolve(paths().source.sass, '**/*.scss'))
