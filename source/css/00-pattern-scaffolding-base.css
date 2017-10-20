@@ -1,0 +1,227 @@
+/**
+ * This stylesheet is for styles you want to include only when displaying demo
+ * styles for grids, animations, color swatches, etc.
+ * These styles will not be your production CSS.
+ */
+#sg-patterns {
+  box-sizing: border-box !important;
+  max-width: 100%;
+  padding: 0 0.5em;
+}
+
+.demo-animate {
+  background: #ddd;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-bottom: 1em;
+  padding: 1em;
+  text-align: center;
+}
+
+.sg-colors {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.sg-colors > li {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  flex: auto;
+  margin: 0 0.5em 0.5em 0;
+  max-width: 14em;
+  min-width: 5em;
+  padding: 0.3em;
+}
+
+/*
+Container for swatches in a compact list
+*/
+.sg-shades {
+  list-style: none;
+  padding: 0;
+}
+
+@media all and (min-width: 42em) {
+  .sg-shades {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+  }
+}
+
+.sg-shades > li {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin: 0.5em 0;
+  padding: 0.5em;
+}
+
+@media all and (min-width: 42em) {
+  .sg-shades > li {
+    border: 0;
+    border-radius: 0;
+    display: grid;
+    grid-template-columns: 4em 1fr;
+    margin: 0;
+  }
+}
+
+.sg-shades > li + li {
+  border-top: 1px solid #ddd;
+}
+
+.sg-swatch {
+  border-radius: 5px;
+  display: block;
+  height: 6em;
+  margin-bottom: 0.3em;
+}
+
+.sg-shades .sg-swatch {
+  height: 2em;
+}
+
+@media all and (min-width: 42em) {
+  .sg-shades .sg-swatch {
+    margin-bottom: 0;
+    width: 4em;
+  }
+}
+
+.sg-swatch-check {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  height: 6em;
+}
+
+.sg-swatch-check__group {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  justify-self: center;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.sg-swatch-check__item {
+  align-self: end;
+  text-align: center;
+}
+
+.sg-swatch-check__item:nth-child(1) {
+  margin-right: 5px;
+}
+
+.sg-swatch-check__item::before {
+  content: 'A';
+  display: block;
+  height: 1em;
+}
+
+.sg-swatch-check__item--light::before {
+  color: #fff;
+}
+
+.sg-swatch-check__item--dark::before {
+  color: #000;
+}
+
+.sg-swatch-check__item--small::before {
+  font-size: 12px;
+}
+
+.sg-swatch-check__item--big::before {
+  font-size: 18px;
+}
+
+.sg-swatch-check__item-label {
+  background-color: #000;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 0.7em;
+  padding: 2px 4px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.sg-label {
+  font-size: 90%;
+  line-height: 1;
+}
+
+.sg-datalist {
+  margin-bottom: 0;
+  padding: 0;
+}
+
+@media all and (min-width: 42em) {
+  .sg-datalist {
+    display: grid;
+    grid-template-columns: 25% 75%;
+  }
+}
+
+.sg-datalist > * {
+  margin: 0 0 1em;
+  padding: 0;
+}
+
+.sg-datalist--code > * {
+  align-self: center;
+}
+
+.sg-datalist--code > dt {
+  margin-bottom: 0;
+}
+
+.sg-datalist--code > dd {
+  font-family: monospace;
+  margin-left: 0;
+}
+
+.sg-datalist--flat {
+  grid-template-columns: 4em 1fr 4em 1fr 4em 1fr 4em 1fr;
+  margin: 0;
+}
+
+@media all and (min-width: 42em) {
+  .sg-datalist--code > dd,
+  .sg-datalist--flat > dd {
+    margin-bottom: 0;
+  }
+}
+
+@media all and (min-width: 42em) {
+  .sg-datalist > dt {
+    padding-right: 0.5em;
+    text-align: right;
+  }
+}
+
+.sg-datalist__label {
+  background-color: #ddd;
+  border-radius: 5px;
+  color: #000;
+  font-size: 0.7em;
+  padding: 2px 4px;
+  text-transform: uppercase;
+}
+
+/* displays an image with a small padding */
+.sg-image-block {
+  border: 1px solid #ededed;
+  display: inline-block;
+  padding: 5px;
+}
+
+.sg-image-block  > * {
+  display: block;
+}
+
+/* displays the image with a checkered background */
+.sg-image-block.is-transparent > * {
+  background-color: #ededed;
+  background-image: url('/images/checkered-bg.gif');
+}
