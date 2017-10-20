@@ -64,3 +64,4 @@ As an example this version comes with an augmented version (compared to the orig
 - [x] Add support for normalize
 - [x] Add support for automatic SASS linting via stylelint.
 - [ ] Test in conjunction with official starterkits
+- [ ] Fix stylelint config against BEM class names
