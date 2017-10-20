@@ -26,11 +26,13 @@
     "Atomic Web Design",
     "Node",
     "Gulp",
-    "Javascript"
+    "Javascript",
+    "sass",
+    "scss"
   ],
   "repository": {
     "type": "git",
-    "url": "git@bitbucket.org:digitalrigbitbucketteam/patternlab-base-toolkit.git"
+    "url": "git@github.com:buildit/patternlab-base-toolkit.git"
   },
   "bugs": "https://github.com/pattern-lab/edition-node-gulp/issues",
   "author": "Brian Muenzenmeyer",
