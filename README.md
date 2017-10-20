@@ -60,6 +60,6 @@ As an example this version comes with an augmented version (compared to the orig
 
 # TODO
 
-- [ ] Add support for autoprefixer when compiling SCSS files.
+- [x] Add support for autoprefixer when compiling SCSS files.
 - [ ] Add support for normalize
 - [x] Add support for automatic SASS linting via stylelint.

@@ -8,6 +8,8 @@ const path = require('path');
 const browserSync = require('browser-sync').create();
 const sass = require('gulp-sass');
 const argv = require('minimist')(process.argv.slice(2));
+const autoprefixer = require('gulp-autoprefixer');
+const sourcemaps = require('gulp-sourcemaps');
 const chalk = require('chalk');
 const concat = require('gulp-concat');
 
@@ -37,7 +39,10 @@ gulp.task('pl-sass', function () {
   };
 
   return gulp.src(path.resolve(paths().source.sass, '**/*.scss'))
+    .pipe(sourcemaps.init())
     .pipe(sass(sassOptions).on('error', sass.logError))
+    .pipe(autoprefixer())
+    .pipe(sourcemaps.write())
     .pipe(gulp.dest(path.resolve(paths().source.css)))
 })
 
@@ -76,7 +81,7 @@ gulp.task('pl-copy:assets', function () {
 
 // CSS Copy base style
 gulp.task('pl-copy:css:style', function () {
-  return gulp.src(normalizePath(paths().source.css) + '/style.css')
+  return gulp.src(normalizePath(paths().source.css) + '/style.css*')
     .pipe(gulp.dest(normalizePath(paths().public.css)))
     .pipe(browserSync.stream());
 });
@@ -84,7 +89,10 @@ gulp.task('pl-copy:css:style', function () {
 // CSS Concat and copy pattern-scaffolding
 gulp.task('pl-copy:css:scaffolding', function () {
   return gulp.src(normalizePath(paths().source.css) + '/*pattern-scaffolding*.css')
+    .pipe(sourcemaps.init())
+    .pipe(autoprefixer())
     .pipe(concat('pattern-scaffolding.css'))
+    .pipe(sourcemaps.write())
     .pipe(gulp.dest(normalizePath(paths().public.css)))
     .pipe(browserSync.stream());
 });
