@@ -7,7 +7,6 @@ const gulp = require('gulp');
 const path = require('path');
 const browserSync = require('browser-sync').create();
 const sass = require('gulp-sass');
-const eyeglass = require('eyeglass');
 const argv = require('minimist')(process.argv.slice(2));
 const chalk = require('chalk');
 const concat = require('gulp-concat');
@@ -38,7 +37,7 @@ gulp.task('pl-sass', function () {
   };
 
   return gulp.src(path.resolve(paths().source.sass, '**/*.scss'))
-    .pipe(sass(eyeglass(sassOptions)).on('error', sass.logError))
+    .pipe(sass(sassOptions).on('error', sass.logError))
     .pipe(gulp.dest(path.resolve(paths().source.css)))
 })
 
