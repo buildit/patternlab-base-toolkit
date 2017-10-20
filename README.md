@@ -43,4 +43,4 @@ The `gulpfile.js` will automatically compile, inject, and reload the browser upo
 
 - [ ] Add support for autoprefixer when compiling SCSS files.
 - [ ] Add support for normalize
-- [ ] Add support for automatic SASS linting via stylelint.
+- [x] Add support for automatic SASS linting via stylelint.

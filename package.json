@@ -13,8 +13,7 @@
     "minimist": "^1.2.0",
     "patternlab-node": "^2.12.0",
     "styleguidekit-assets-default": "^3.5.0",
-    "styleguidekit-mustache-default": "^3.0.0",
-    "stylelint-config-standard": "^16.0.0"
+    "styleguidekit-mustache-default": "^3.0.0"
   },
   "keywords": [
     "Pattern Lab",
@@ -37,10 +36,17 @@
   "scripts": {
     "start": "gulp patternlab:serve",
     "postinstall": "node scripts/postinstall.js",
-    "gulp": "gulp -- "
+    "gulp": "gulp -- ",
+    "stylelint": "stylelint source/sass/**/*.scss"
   },
   "license": "MIT",
   "engines": {
     "node": ">=5.0"
+  },
+  "devDependencies": {
+    "stylelint": "^8.2.0",
+    "stylelint-config-sass-guidelines": "^3.1.0",
+    "stylelint-order": "^0.7.0",
+    "stylelint-scss": "^2.1.0"
   }
 }
