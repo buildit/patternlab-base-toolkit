@@ -20,7 +20,7 @@ Install all the dependencies:
 Load the starterkits, if any, for instance:
 
     $ npm install starterkit-mustache-demo
-    $ gulp patternlab:loadstarterkit --kit=starterkit-mustache-demo
+    $ npm run gulp -- patternlab:loadstarterkit --kit=starterkit-mustache-demo
 
 Run the project:
 
