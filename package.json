@@ -39,7 +39,7 @@
   "scripts": {
     "start": "gulp patternlab:serve",
     "postinstall": "node scripts/postinstall.js",
-    "gulp": "gulp -- ",
+    "gulp": "gulp",
     "stylelint": "stylelint source/sass/**/*.scss"
   },
   "license": "MIT",
