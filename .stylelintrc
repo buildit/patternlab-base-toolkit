@@ -2,8 +2,7 @@
   "extends": "stylelint-config-sass-guidelines",
   "plugins": [
     "stylelint-scss",
-    "stylelint-order",
-    "stylelint-selector-bem-pattern"
+    "stylelint-order"
   ],
   "ignoreFiles": "node_modules",
   "rules": {
@@ -40,14 +39,6 @@
     "scss/at-extend-no-missing-placeholder": true,
     "scss/dollar-variable-no-missing-interpolation": true,
     "scss/at-mixin-argumentless-call-parentheses": "never",
-    "plugin/selector-bem-pattern": {
-      "componentName": "[A-Z]+",
-      "componentSelectors": {
-        "initial": "^\\.{componentName}(?:-[a-z]+)?$",
-        "combined": "^\\.combined-{componentName}-[a-z]+$"
-      },
-      "utilitySelectors": "^\\.u-[a-z]+$"
-    },
     "order/order": [
       {
         "type": "at-rule",

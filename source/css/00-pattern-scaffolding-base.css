@@ -3,12 +3,14 @@
  * styles for grids, animations, color swatches, etc.
  * These styles will not be your production CSS.
  */
+
 #sg-patterns {
   box-sizing: border-box !important;
   max-width: 100%;
   padding: 0 0.5em;
 }
 
+/** @define demo-animate */
 .demo-animate {
   background: #ddd;
   border-radius: 8px;
@@ -18,6 +20,7 @@
   text-align: center;
 }
 
+/** @define sg-colors */
 .sg-colors {
   display: flex;
   flex-wrap: wrap;
@@ -36,9 +39,10 @@
   padding: 0.3em;
 }
 
-/*
-Container for swatches in a compact list
-*/
+/**
+ * @define sg-shades
+ * Container for swatches in a compact list
+ */
 .sg-shades {
   list-style: none;
   padding: 0;
@@ -72,13 +76,6 @@ Container for swatches in a compact list
   border-top: 1px solid #ddd;
 }
 
-.sg-swatch {
-  border-radius: 5px;
-  display: block;
-  height: 6em;
-  margin-bottom: 0.3em;
-}
-
 .sg-shades .sg-swatch {
   height: 2em;
 }
@@ -90,6 +87,15 @@ Container for swatches in a compact list
   }
 }
 
+/** @define sg-swatch */
+.sg-swatch {
+  border-radius: 5px;
+  display: block;
+  height: 6em;
+  margin-bottom: 0.3em;
+}
+
+/** @define sg-swatch-check */
 .sg-swatch-check {
   display: grid;
   grid-template-columns: 50% 50%;
@@ -146,11 +152,13 @@ Container for swatches in a compact list
   text-transform: uppercase;
 }
 
+/** @define sg-label */
 .sg-label {
   font-size: 90%;
   line-height: 1;
 }
 
+/** @define sg-datalist */
 .sg-datalist {
   margin-bottom: 0;
   padding: 0;
@@ -209,7 +217,10 @@ Container for swatches in a compact list
   text-transform: uppercase;
 }
 
-/* displays an image with a small padding */
+/**
+ * @define sg-image-block
+ * displays an image with a small padding
+ */
 .sg-image-block {
   border: 1px solid #ededed;
   display: inline-block;
