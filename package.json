@@ -53,6 +53,7 @@
     "stylelint": "^8.2.0",
     "stylelint-config-sass-guidelines": "^3.1.0",
     "stylelint-order": "^0.7.0",
-    "stylelint-scss": "^2.1.0"
+    "stylelint-scss": "^2.1.0",
+    "stylelint-selector-bem-pattern": "^2.0.0"
   }
 }
