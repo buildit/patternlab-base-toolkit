@@ -6,7 +6,23 @@ This is an improved version of [PatternLab Node Edition Gulp](https://github.com
 
 Check out the [Technical Bits](#technical-bits) if you want to learn more about it.
 
-## Installation
+## Setup and run
+
+### Requirements
+
+The (main) requirement for running this project is [Node](https://nodejs.org) and [NPM](https://www.npmjs.com) (which usually comes when installing Node).
+
+The recommended way to have NPM installed is via [NVM](https://github.com/creationix/nvm#installation) which will also allow you to have different versions installed at the same time.
+
+There's nothing wrong in using any other way to install Node, like the default system-installed Node version, as long as it's above version 5.0.
+
+_Optionally_, once you have installed Node and NPM, you can install Gulp 4 globally, as follows:
+
+    $ npm install -g gulpjs/gulp#4.0
+
+You do not need this, as you will see later.
+
+### Installation
 
 Clone the current repo:
 
@@ -35,11 +51,13 @@ There are some major differences from the original project, namely:
 - SASS compilation
 - Concatenation of PL styles (`pattern-scaffolding` files)
 - Directory structure
-- Improved code standards to be used throughout the project
+- Improved code standards and linting used throughout the project
 
 ### SASS compilation
 
 The `gulpfile.js` will automatically compile, inject, and reload the browser upon changes to any of the `*.scss` files available in the directory `/source/sass/`.
+
+The current version now includes [normalize](https://necolas.github.io/normalize.css/), albeit [its SASS version](https://github.com/JohnAlbin/normalize-scss), and [autoprefixer](https://github.com/postcss/autoprefixer) to automate vendor prefixes.
 
 ### Concatenation of PL styles
 
