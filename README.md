@@ -16,11 +16,13 @@ The recommended way to have NPM installed is via [NVM](https://github.com/creati
 
 There's nothing wrong in using any other way to install Node, like the default system-installed Node version, as long as it's above version 5.0.
 
-_Optionally_, once you have installed Node and NPM, you can install Gulp 4 globally, as follows:
+_Optionally, but not recommended_: once you have installed Node and NPM, you can install Gulp 4 globally, as follows:
 
-    $ npm install -g gulpjs/gulp#4.0
+    $ npm install -g gulpjs/gulp#v4.0.0
 
 You do not need this, as you will see later.
+
+If you're stumbling on any error, have a look at the [troubleshooting section](#Troubleshooting) below
 
 ### Installation
 
@@ -75,6 +77,18 @@ As an example you can have in `/source/css/` the following files:
 Once running it would generate `pattern-scaffolding.css` that is automatically read by PatternLab.
 
 As an example this version comes with an augmented version (compared to the original PL version) that provides some possibly useful styles.
+
+# Troubleshooting
+
+## Error: Node Sass does not yet support your current environment
+
+When installing the starterkit you're getting an error like the following:
+
+    Error: Node Sass does not yet support your current environment: OS X 64-bit with Unsupported runtime (59)
+
+This seems to be related to [this (resolved) issue](https://github.com/sass/node-sass/issues/1764), and you can fix it by running the following command:
+
+    $ npm rebuild node-sass
 
 # TODO
 
