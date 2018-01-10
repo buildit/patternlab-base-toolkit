@@ -90,6 +90,27 @@ This seems to be related to [this (resolved) issue](https://github.com/sass/node
 
     $ npm rebuild node-sass
 
+## I'm using the starterkit-x but can't see any styles
+
+This would normally happen if you've installed the `starterkit-mustache-demo`, since it places both the CSS and the SASS files in the same folder `/source/css/`.
+
+Following is a _quick and dirty_ solution if you just need to get things working.  If you want a proper solution, read further.
+
+Add the following line at the bottom of the `/source/sass/style.scss` file:
+
+```scss
+@include '../css/style.scss';
+```
+
+That should be enough to do the trick.
+
+If you want a _proper_ solution, you'll have to move the sass files in the right location.
+In order to do that, the following steps are necessary:
+
+1. Copy all the folders and their contents from `/source/css/scss/` into `/source/sass/`.
+2. Move `/source/css/style.scss` to `/sources/sass/style.scss`, overriding the previous file.
+3. Edit the file `/srouces/sass/style.scss` and remove the `scss/` portion from any included path.
+
 # TODO
 
 - [x] Add support for autoprefixer when compiling SCSS files.
