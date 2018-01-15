@@ -79,13 +79,6 @@ gulp.task('pl-copy:assets', function () {
     .pipe(gulp.dest(normalizePath(paths().public.assets)));
 });
 
-// CSS Copy base style
-gulp.task('pl-copy:css:style', function () {
-  return gulp.src(normalizePath(paths().source.css) + '/style.css*')
-    .pipe(gulp.dest(normalizePath(paths().public.css)))
-    .pipe(browserSync.stream());
-});
-
 // CSS Concat and copy pattern-scaffolding
 gulp.task('pl-copy:css:scaffolding', function () {
   return gulp.src(normalizePath(paths().source.css) + '/*pattern-scaffolding*.css')
@@ -155,7 +148,6 @@ gulp.task('pl-assets', gulp.series(
     'pl-copy:favicon',
     'pl-copy:font',
     'pl-sass',
-    'pl-copy:css:style',
     'pl-copy:css:scaffolding',
     'pl-copy:styleguide',
     'pl-copy:styleguide-css'
@@ -237,10 +229,10 @@ function watch() {
       tasks: gulp.series('pl-sass', reloadCSS)
     },
     {
-      name: 'CSS',
-      paths: [normalizePath(paths().source.css, '**', '*.css')],
+      name: 'Pattern Scaffolding CSS',
+      paths: [normalizePath(paths().source.css, '**', '*pattern-scaffolding*.css')],
       config: { awaitWriteFinish: true },
-      tasks: gulp.series(['pl-copy:css:style', 'pl-copy:css:scaffolding'], reloadCSS)
+      tasks: gulp.series('pl-copy:css:scaffolding', reloadCSS)
     },
     {
       name: 'Styleguide Files',
