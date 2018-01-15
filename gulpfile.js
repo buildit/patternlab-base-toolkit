@@ -43,7 +43,7 @@ gulp.task('pl-sass', function () {
     .pipe(sass(sassOptions).on('error', sass.logError))
     .pipe(autoprefixer())
     .pipe(sourcemaps.write())
-    .pipe(gulp.dest(path.resolve(paths().source.css)))
+    .pipe(gulp.dest(path.resolve(paths().public.css)))
 })
 
 /******************************************************
@@ -234,7 +234,7 @@ function watch() {
       name: 'SASS',
       paths: [normalizePath(paths().source.sass, '**', '*.scss')],
       config: { awaitWriteFinish: true },
-      tasks: gulp.series('pl-sass')
+      tasks: gulp.series('pl-sass', reloadCSS)
     },
     {
       name: 'CSS',
