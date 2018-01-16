@@ -43,7 +43,7 @@ gulp.task('pl-sass', function () {
     .pipe(sass(sassOptions).on('error', sass.logError))
     .pipe(autoprefixer())
     .pipe(sourcemaps.write())
-    .pipe(gulp.dest(path.resolve(paths().source.css)))
+    .pipe(gulp.dest(path.resolve(paths().public.css)))
 })
 
 /******************************************************
@@ -77,13 +77,6 @@ gulp.task('pl-copy:font', function () {
 gulp.task('pl-copy:assets', function () {
   return gulp.src('*', {cwd: normalizePath(paths().source.assets)})
     .pipe(gulp.dest(normalizePath(paths().public.assets)));
-});
-
-// CSS Copy base style
-gulp.task('pl-copy:css:style', function () {
-  return gulp.src(normalizePath(paths().source.css) + '/style.css*')
-    .pipe(gulp.dest(normalizePath(paths().public.css)))
-    .pipe(browserSync.stream());
 });
 
 // CSS Concat and copy pattern-scaffolding
@@ -155,7 +148,6 @@ gulp.task('pl-assets', gulp.series(
     'pl-copy:favicon',
     'pl-copy:font',
     'pl-sass',
-    'pl-copy:css:style',
     'pl-copy:css:scaffolding',
     'pl-copy:styleguide',
     'pl-copy:styleguide-css'
@@ -234,13 +226,13 @@ function watch() {
       name: 'SASS',
       paths: [normalizePath(paths().source.sass, '**', '*.scss')],
       config: { awaitWriteFinish: true },
-      tasks: gulp.series('pl-sass')
+      tasks: gulp.series('pl-sass', reloadCSS)
     },
     {
-      name: 'CSS',
-      paths: [normalizePath(paths().source.css, '**', '*.css')],
+      name: 'Pattern Scaffolding CSS',
+      paths: [normalizePath(paths().source.css, '**', '*pattern-scaffolding*.css')],
       config: { awaitWriteFinish: true },
-      tasks: gulp.series(['pl-copy:css:style', 'pl-copy:css:scaffolding'], reloadCSS)
+      tasks: gulp.series('pl-copy:css:scaffolding', reloadCSS)
     },
     {
       name: 'Styleguide Files',
