@@ -2,7 +2,7 @@
 
 ## Overview
 
-This is an improved version of [PatternLab Node Edition Gulp](https://github.com/pattern-lab/edition-node-gulp) with SASS compilatian included.
+This is an improved version of [PatternLab Node Edition Gulp](https://github.com/pattern-lab/edition-node-gulp) with SASS compilation included.
 
 Check out the [Technical Bits](#technical-bits) if you want to learn more about it.
 
